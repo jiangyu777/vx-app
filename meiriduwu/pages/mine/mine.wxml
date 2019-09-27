@@ -1,2 +1,31 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+ <view class="text-top">
+    <image src="../../images/recharge.png" />
+     <text >
+         分享服务器费用
+     </text>
+    <image src="../../images/arrow_right.png" />
+ </view>
+ <view class="text-top">
+    <image src="../../images/email.png" />
+     <text >
+         分享
+     </text>
+     <image src="../../images/arrow_right.png" />
+ </view>
+ <view class="text-top">
+    <image src="../../images/info.png" />
+     <text >
+         意见建议
+     </text>
+     <image src="../../images/arrow_right.png" />
+ </view>
+</view>
